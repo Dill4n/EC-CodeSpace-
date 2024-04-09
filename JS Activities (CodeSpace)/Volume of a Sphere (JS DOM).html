@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of a Sphere Calculator</title>
+</head>
+<body>
+    <h2>Volume of a Sphere Calculator</h2>
+    <p>Enter the radius of the sphere:</p>
+    <input type="number" id="radius">
+    <button onclick="calculateVolume()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateVolume() {
+            let radius = document.getElementById("radius").value;
+            let volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById("result").innerText = "Volume: " + volume.toFixed(2);
+        }
+    </script>
+</body>
+</html>
