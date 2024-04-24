@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <style>
-        /* Your CSS styles */
+        
         #rps, h1 {
             text-align: center;
             color: white;
@@ -41,7 +41,7 @@
         </ul>
     </div>
     <div id="choices">
-        <!-- Buttons will be generated dynamically here -->
+        
     </div>
 	<div id="result"></div>
     <div id="score">
@@ -50,7 +50,7 @@
     </div>
     <button onclick="resetGame()">Play Again</button>
     <script>
-        // JavaScript code
+        
         document.getElementById("rps").style.fontSize = "30px";
         document.getElementById("choices").style.textAlign = "center";
 
@@ -61,7 +61,7 @@
         var computerChoice;
         var choices = ["rock", "paper", "scissors"];
 
-        // Generate choice buttons dynamically
+        
         var choicesContainer = document.getElementById("choices");
         for (var i = 0; i < choices.length; i++) {
             var choice = choices[i];
@@ -73,7 +73,7 @@
             choicesContainer.appendChild(button);
         }
 
-        // Function to capitalize the first letter of a string
+        
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
@@ -109,7 +109,7 @@
                 console.log("You lose!");
                 computerScore++;
             }
-            updateScore(); // Update the display with the current score
+            updateScore(); 
         }
 
         function updateScore() {
