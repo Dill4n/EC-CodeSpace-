@@ -6,14 +6,14 @@
 //  reverseString("James");    //  semaJ
 
 const reverseString = function(name) {
-    let reversedString = "";
+    let gnirtS = "";
 
     for (let i = name.length - 1; i >= 0; i--) {
     
     
-    reversedString += name[i];
+        gnirtS += name[i];
     }
-    return reversedString;
+    return gnirtS;
 };
 
 console.log(reverseString("Dillin'"));
