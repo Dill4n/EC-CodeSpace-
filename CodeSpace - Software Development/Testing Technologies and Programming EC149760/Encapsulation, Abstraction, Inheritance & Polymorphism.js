@@ -40,6 +40,36 @@ class Circle {
 // It hides the unnecessary details from the user.
 
 Example:
+
+
   
 
 
+// 3.   Inheritance
+
+//Inheritance allows a class to inherit properties and methods from another class. 
+// It promotes code reusability and establishes a relationship between the parent (superclass) and child (subclass) classes.
+
+Example:
+
+
+class Animal {
+  constructor(name) {
+      this.name = name;
+  }
+  sound() {
+      console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  sound() {
+      console.log(`${this.name} barks.`);
+  }
+}
+
+const myAnimal = new Animal('Lion');
+myAnimal.sound();
+
+const myDog = new Dog('Daisy');
+myDog.sound();
