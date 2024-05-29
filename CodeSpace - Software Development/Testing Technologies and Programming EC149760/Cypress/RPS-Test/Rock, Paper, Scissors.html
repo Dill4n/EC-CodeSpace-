@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <style>
+        
+        #rps, h1 {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 70px;
+        }
+
+        body {
+            background-color: red;
+        }
+
+        .rules {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="rps">Fight to the death in...</p>
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="rules">
+        <h2>Winning Rules</h2>
+        <ul>
+            <li>Rock obliterates Scissors.</li>
+            <li>Paper suffocates Rock.</li>
+            <li>Scissors bleedz trees.</li>
+        </ul>
+    </div>
+    <div id="choices">
+        
+    </div>
+	<div id="result"></div>
+    <div id="score">
+        <p>Player Score: <span id="playerScore">0</span></p>
+        <p>Computer Score: <span id="computerScore">0</span></p>
+    </div>
+    <button onclick="resetGame()">Play Again</button>
+    <script>
+        
+        document.getElementById("rps").style.fontSize = "30px";
+        document.getElementById("choices").style.textAlign = "center";
+
+        var playerScore = 0;
+        var computerScore = 0;
+
+        var playerChoice;
+        var computerChoice;
+        var choices = ["rock", "paper", "scissors"];
+
+        
+        var choicesContainer = document.getElementById("choices");
+        for (var i = 0; i < choices.length; i++) {
+            var choice = choices[i];
+            var button = document.createElement("button");
+            button.textContent = capitalizeFirstLetter(choice);
+            button.onclick = function() {
+                choose(choice);
+            };
+            choicesContainer.appendChild(button);
+        }
+
+        
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function computersMove() {
+            var randomChoice = Math.floor(Math.random() * choices.length);
+            computerChoice = choices[randomChoice];
+        }
+
+        function choose(playerChoice) {
+            playerChoice = playerChoice.toLowerCase();
+            console.log("Player chose: " + playerChoice);
+            computersMove();
+            determineWinner(playerChoice, computerChoice);
+        }
+
+        function determineWinner(playerChoice, computerChoice) {
+            console.log("Computer chose: " + computerChoice);
+
+            if (playerChoice === computerChoice) {
+                displayResult("It's a draw!");
+                console.log("It's a draw!");
+            } else if (
+                (playerChoice === "rock" && computerChoice === "scissors") ||
+                (playerChoice === "paper" && computerChoice === "rock") ||
+                (playerChoice === "scissors" && computerChoice === "paper")
+            ) {
+                displayResult("You won!");
+                console.log("You won!");
+                playerScore++;
+            } else {
+                displayResult("You lose!");
+                console.log("You lose!");
+                computerScore++;
+            }
+            updateScore(); 
+        }
+
+        function updateScore() {
+            document.getElementById("playerScore").textContent = playerScore;
+            document.getElementById("computerScore").textContent = computerScore;
+        }
+
+        function resetGame() {
+            playerScore = 0;
+            computerScore = 0;
+            updateScore();
+        }
+
+        function displayResult(result) {
+        document.getElementById("result").innerText = result;
+        document.getElementById("result").style.textAlign = "center";
+		document.getElementById("result").style.fontSize = "60px";
+        }
+		
+		
+		
+    </script>
+</body>
+</html>
