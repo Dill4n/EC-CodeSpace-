@@ -1,0 +1,34 @@
+<script>
+
+function randNum () {
+    let xNum = Math.ceil(Math.random() * 10);
+    
+    let input = parseInt(prompt('What number am I thinking of? (0-10)'));
+
+    while (input !== xNum) {
+        input = parseInt(prompt(input + '? ' + 'Sorry, nope! Guess again..'));
+    }
+
+    if (input == xNum) {
+        console.log("You've foiled my plans!"); 
+		document.write("You won!");
+    }
+}
+
+randNum();
+
+/* comments:
+
+- function named 'randNum' for remembrance
+
+- * 10 was used for easier & quicker testing
+
+- Math.ceil was used over Math.floor for shorter code, and to remove potential decimals.
+
+- input + '? ' + 'Sorry, nope! Guess again..'  was configured to mention your answer + loss
+
+- if () prints "You won!" on physical document + console.
+
+*/
+
+</script>
