@@ -33,7 +33,7 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 10; /* Ensure logo is on top */
+            z-index: 10; 
         }
 
        
@@ -41,7 +41,7 @@
             position: absolute;
             top: 50%;
             left: 56%;
-            transform: translate(-50%, 50%); /* Positioning it just below the logo */
+            transform: translate(-50%, 50%); 
             z-index: 10;
         }
 
@@ -60,12 +60,12 @@
             position: absolute;
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Circular images */
+            border-radius: 50%; 
         }
 
         
         .MKwatch1 {
-            top: 15%;
+            top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -113,7 +113,7 @@
     
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Login</a>
+      <a class="navbar-brand" href="#">MK</a>
       <button class="navbar-toggler" type="button" 
     data-toggle="collapse" 
     data-target="#navbarNav" 
